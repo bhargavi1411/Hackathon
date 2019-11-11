@@ -17,9 +17,9 @@ import java.sql.*;
          String password = bean.getPassword();   
 	    
          String searchQuery =
-               "select * from users where username='"
+               "select * from users where user_name='"
                         + username
-                        + "' AND password='"
+                        + "' AND pass_word='"
                         + password
                         + "'";
 	    
@@ -46,8 +46,8 @@ import java.sql.*;
          //if user exists set the isValid variable to true
          else if (more) 
          {
-            String firstName = rs.getString("FirstName");
-            String lastName = rs.getString("LastName");
+            String firstName = rs.getString("customer_name");
+            String lastName = rs.getString("last_logged_in");
 	     	
             System.out.println("Welcome " + firstName);
             bean.setFirstName(firstName);

@@ -15,6 +15,9 @@
 			Please enter your password
 			<input type="text" name="pw"/>
 			
+			Please enter your account type to view the transactions
+			<input type="text" name="at"/>
+			
 			<input type="submit" value="submit">			
 		
 		</form>

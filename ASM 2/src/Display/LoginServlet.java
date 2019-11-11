@@ -24,17 +24,22 @@ try
 	System.out.println("Login action");
 
      UserBean user = new UserBean();
+     Transaction t = new Transaction();
      user.setUserName(request.getParameter("un"));
      user.setPassword(request.getParameter("pw"));
+     user.setAccountType(request.getParameter("at"));
 
      user = UserDAO.login(user);
-	   		    
+     String transactions = t.transaction(user);
+     System.out.print("Check account type = "+user.getAccountType());
+	  System.out.print("Transactions"+ transactions); 		    
      if (user.isValid())
      {
 	        
           HttpSession session = request.getSession(true);	    
           session.setAttribute("currentSessionUser",user); 
-          response.sendRedirect("userLogged.jsp"); //logged-in page      		
+          response.sendRedirect("userLogged.jsp"); //logged-in page  
+         // getServletContext().getRequestDispatcher("/userLogged.jsp").forward(request, response);  
      }
 	        
      else 

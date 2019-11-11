@@ -4,8 +4,17 @@ public class UserBean {
 	
       private String username;
       private String password;
-      private String firstName;
+      public String getAccountType() {
+		return accountType;
+	}
+
+	public void setAccountType(String accountType) {
+		this.accountType = accountType;
+	}
+
+	private String firstName;
       private String lastName;
+      private String accountType;
       public boolean valid;
 	
 	
@@ -51,5 +60,6 @@ public class UserBean {
 
       public void setValid(boolean newValid) {
          valid = newValid;
-	}	
+	}
+
 }

@@ -4,6 +4,7 @@ import java.sql.*;
 import java.util.*;
 
 
+
    public class ConnectionManager {
 
       static Connection con;
@@ -16,7 +17,7 @@ import java.util.*;
          {
         	 System.out.println("Staring connection class");
         	 Class.forName("com.mysql.jdbc.Driver");  
-        	 Connection con=DriverManager.getConnection(  
+        	  con=DriverManager.getConnection(  
         	 "jdbc:mysql://localhost:3306/test","root","mysql12345");  
         	 //here sonoo is database name, root is username and password  
         	// Statement stmt=con.createStatement();  
